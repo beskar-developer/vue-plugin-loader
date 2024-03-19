@@ -1,0 +1,58 @@
+{
+  "name": "vue-plugin-loader",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@8.15.3",
+  "description": "A plugin to register all of your Vue plugin located in 'plugins' directory. Totally configurable with a bunch of features like Nuxt!",
+  "author": "beskar-developer",
+  "license": "MIT",
+  "homepage": "https://github.com/beskar-developer/vue-plugin-loader#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beskar-developer/vue-plugin-loader.git"
+  },
+  "bugs": "https://github.com/beskar-developer/vue-plugin-loader/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.21.12",
+    "@types/node": "^20.11.19",
+    "bumpp": "^9.3.0",
+    "esno": "^4.0.0",
+    "pnpm": "^8.15.3",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3",
+    "unbuild": "^2.0.0",
+    "vite": "^5.1.4"
+  }
+}
